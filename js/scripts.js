@@ -15,6 +15,7 @@ window.onload = function () {
     // var url = "http https://swapi.co/api/" + catagory[i] + "/"+catNum;
     var catagories =[];
     var catNum;
+    var answerARR;
 
     makeRequest();
     function makeRequest(){
@@ -37,7 +38,7 @@ window.onload = function () {
         var responseText = this.responseText;
         // console.log("URL response is: "+responseText);
         APIObject = JSON.parse(responseText);
-        console.log(APIObject.length);
+        // console.log(APIObject.length);
 
         LoadAPI(APIObject);
 
@@ -51,36 +52,45 @@ window.onload = function () {
             console.log(APIObject);
             switch(APIObject.count){
                 case 7://films
-                for(var i = 0;i<APIObject.results.length;i++){
+                for(var i = 0;i<APIObject.count;i++){
                     console.log(APIObject.results[i].title);
                 }
                 break;
-                case 87:
-                for(var i = 0;i<APIObject.results.length;i++){
+                case 87://people
+                for(var i = 0;i<APIObject.count;i++){
+                    if(i == 17){
+                        i++;
+                    }
                     console.log(APIObject.results[i].name);
                 }
                 break;
                 
-                case 61:
-                for(var i = 0;i<APIObject.results.length;i++){
+                case 61://planets
+                for(var i = 0;i<APIObject.count;i++){
                     console.log(APIObject.results[i].name);
                 }
                 break;
 
                 case 37:
-                for(var i = 0;i<APIObject.results.length;i++){
+                //species
+                // console.log(APIObject.results[0].hasOwnProperty('people'));
+                if('people' in APIObject.results[0]){
+                    console.log("people property in species");
+                }
+                for(var i = 0;i<APIObject.count;i++){
+                    console.log(APIObject.results[i].name);
+                }
+                //starships
+                // console.log(APIObject.results[0].hasOwnProperty('pilots'));
+                if('pilots' in APIObject.results[0]){
+                    console.log("pilots property in starships");
+                }
+                for(var i = 0;i<APIObject.count;i++){
                     console.log(APIObject.results[i].name);
                 }
                 break;
-
-                case 37:
-                for(var i = 0;i<APIObject.results.length;i++){
-                    console.log(APIObject.results[i].name);
-                }
-                break;
-
-                case 39:
-                for(var i = 0;i<APIObject.results.length;i++){
+                case 39://vehicals
+                for(var i = 0;i<APIObject.count;i++){
                     console.log(APIObject.results[i].name);
                 }
                 break;
