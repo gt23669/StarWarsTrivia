@@ -1,11 +1,24 @@
 h1{
+    font-size: 60px;
     text-align: center;
-    color: green;
+    color: gold;
+    margin-top: 300px;
+    -webkit-text-stroke-color: dodgerblue;
+    -webkit-text-stroke-width: 1px;
+}
+
+form{
+    font-size: 30Px;
+    text-decoration-color: gold;
 }
 
 body{
     background-color: black;
-    background-image: "C:\Users\Juan\Desktop\All the GIT stuff\StarWarsTrivia\css\lightspeed.jpg"
+    background-image:  url("lightspeed.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    
 }
 
 form{
