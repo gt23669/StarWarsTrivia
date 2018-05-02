@@ -16,10 +16,11 @@ window.onload = function () {
     var catagories =[];
     var catNum;
 
+    makeRequest();
     function makeRequest(){
         catagories = ["films","people","planets","species","starships","vehicles"]
         for(var i = 0;i<catagories.length;i++){
-            var url = "http https://swapi.co/api/" + catagory[i] + "/";
+            var url = "https://swapi.co/api/" + catagories[0] + "/";
             var req = new XMLHttpRequest();
             req.addEventListener("load", APIHandler);
             req.open("GET", url);
@@ -36,17 +37,51 @@ window.onload = function () {
         var responseText = this.responseText;
         // console.log("URL response is: "+responseText);
         APIObject = JSON.parse(responseText);
+        console.log(APIObject.length);
+
         LoadAPI(APIObject);
-        // console.log(APIObject);
 
     }
 
     function LoadAPI(APIObject) {
-        var repoContainer = document.getElementById("repoContainer");
-        repoContainer.innerHTML = "";
+        var objectContainer = document.getElementById("objectContainer");
 
-        for (var i = 0;i< APIObject.length; i++) {
-            var repo = APIObject[i];
+            var repo = Object.assign({}, APIObject); 
+
+            console.log(APIObject);
+            switch(APIObject.count){
+                case 7://films
+                for(var i = 0;i<APIObject.results.length;i++){
+                    console.log(APIObject.results[i].title);
+                }
+
+                break;
+
+                case 87:
+
+                break;
+                
+                case 61:
+
+                break;
+
+                case 37:
+
+                break;
+
+                case 37:
+
+                break;
+
+                case 39:
+
+                break;
+
+                default:
+                console.log("Hit default case");
+                break;
+
+            }
 
             var newDiv = document.createElement("div");
             var newSpan = document.createElement("span");
@@ -54,21 +89,21 @@ window.onload = function () {
             newSpan.textContent = repo.name;
 
             newDiv.appendChild(newSpan);
-            repoContainer.appendChild(newDiv);
-        }
+            objectContainer.appendChild(newDiv);
+
     }
 
 
     var userForm = document.getElementById("usernameForm");
 
-    userForm.onsubmit = function(){
+    // userForm.onsubmit = function(){
 
-        var username = userForm["username"].value;
-        console.log(username);
+    //     var username = userForm["username"].value;
+    //     console.log(username);
 
-        makeRequest();
+    //     makeRequest();
 
-        return false;
-    };
+    //     return false;
+    // };
 
 }
