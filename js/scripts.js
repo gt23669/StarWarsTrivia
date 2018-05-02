@@ -20,7 +20,7 @@ window.onload = function () {
     function makeRequest(){
         catagories = ["films","people","planets","species","starships","vehicles"]
         for(var i = 0;i<catagories.length;i++){
-            var url = "https://swapi.co/api/" + catagories[0] + "/";
+            var url = "https://swapi.co/api/" + catagories[i] + "/";
             var req = new XMLHttpRequest();
             req.addEventListener("load", APIHandler);
             req.open("GET", url);
@@ -54,27 +54,35 @@ window.onload = function () {
                 for(var i = 0;i<APIObject.results.length;i++){
                     console.log(APIObject.results[i].title);
                 }
-
                 break;
-
                 case 87:
-
+                for(var i = 0;i<APIObject.results.length;i++){
+                    console.log(APIObject.results[i].name);
+                }
                 break;
                 
                 case 61:
-
+                for(var i = 0;i<APIObject.results.length;i++){
+                    console.log(APIObject.results[i].name);
+                }
                 break;
 
                 case 37:
-
+                for(var i = 0;i<APIObject.results.length;i++){
+                    console.log(APIObject.results[i].name);
+                }
                 break;
 
                 case 37:
-
+                for(var i = 0;i<APIObject.results.length;i++){
+                    console.log(APIObject.results[i].name);
+                }
                 break;
 
                 case 39:
-
+                for(var i = 0;i<APIObject.results.length;i++){
+                    console.log(APIObject.results[i].name);
+                }
                 break;
 
                 default:
