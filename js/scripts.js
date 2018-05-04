@@ -12,44 +12,48 @@ window.onload = function () {
 
     //get put post remove
     // var url = "https://api.github.com/users/gt23669";
-    // var url = "http https://swapi.co/api/" + catagory[i] + "/"+catNum;
-    var catagories = ["films", "people", "planets", "species", "starships", "vehicles"]
-    var catNum;
-    var answerARR;
-    var req = new XMLHttpRequest();
-    var index = 0;
 
-    makeRequest();
-    function makeRequest() {
- 
-   
-
-            var url = "https://swapi.co/api/"+catagories[index]+"/";
-            // var req = new XMLHttpRequest();
-            req.addEventListener("load", APIHandler);
-            req.open("GET", url);
-            req.send();
+    // var catagories = ["films", "people", "planets", "species", "starships", "vehicles"]
 
 
-    }
-    function nextRequest(url) {
-        this.url = url;
-        // var reqNext = req;
-        req.addEventListener("load", nextAPIHandler);
+    var currentClass = "";
+    function makeRequest(className) {
+        var url = "https://swapi.co/api/" + className + "/";
+        url = url + getRandomNum(className);
+        var req = new XMLHttpRequest();
+
+        currentClass = className;
+        req.addEventListener("load", APIHandler);
         req.open("GET", url);
         req.send();
 
 
+    }
+    function getRandomNum(className) { //We need to know which numbers are broken
+        var num;
+        switch (className) {
+            case "films":
+                num = Math.floor(Math.random(8));
+                break;
+            case "people":
+                num = Math.floor(Math.random(88));
+                break;
+            case "planets":
+                num = Math.floor(Math.random(62));
+                break;
+            case "species":
+                num = Math.floor(Math.random(38));
+                break;
+            case "starships":
+                num = Math.floor(Math.random(38));
+                break;
+            case "vehicles":
+                num = Math.floor(Math.random(40));
+                break;
+        }
+        return num;
 
     }
-    var APINextObject;
-    function nextAPIHandler() {
-        console.log("nextrequest hit");
-        var responseText = this.responseText;
-        APIObject = JSON.parse(responseText);
-    }
-
-
     var APIObject;
 
 
@@ -65,108 +69,45 @@ window.onload = function () {
 
     function LoadAPI(APIObject) {
         var objectContainer = document.getElementById("objectContainer");
-
-        var repo = Object.assign({}, APIObject);
-
         console.log(APIObject);
-        var count = 0;
-        switch (APIObject.count) {
-            case 7://films
-                // for (var i = 0; i < APIObject.count; i++) {
-                //     // console.log(APIObject.results[i].title);
-                // }
-                if (APIObject.next != null) {
-                    console.log("films next not null")
-                    for (var i = 0; i < APIObject.results.length; i++) {
-                        console.log(count + " " + APIObject.results[i].name);
-                    }
-                    var url = APIObject.next;
-                    console.log(APIObject.next);
-                    nextRequest(url);
-                }
-                break;
-            case 87://people
-            
-                if (APIObject.next != null) {
-                    console.log("people next not null")
 
-                        for (var i = 0; i < APIObject.results.length; i++) {
-                            console.log(count + " " + APIObject.results[i].name);
-                        }
-                        var url = APIObject.next;
-                        console.log(APIObject.next);
-                        nextRequest(url);
+        var num = 0;
+        switch (currentClass) {
+            case "films":
+                num = Math.floor(Math.random(8));
+                switch (num) {
+                    //random questions inside nested switch based on currentclass
                 }
                 break;
+            case "people":
+                num = Math.floor(Math.random(88));
+                switch (num) {
 
-            case 61://planets
-                // for (var i = 0; i < APIObject.count; i++) {
-                //     // console.log(APIObject.results[i].name);
-                // }
-                if (APIObject.next != null) {
-                    console.log("planets next not null")
-                    for (var i = 0; i < APIObject.results.length; i++) {
-                        console.log(count + " " + APIObject.results[i].name);
-                    }
-                    var url = APIObject.next;
-                    console.log(APIObject.next);
-                    nextRequest(url);
                 }
                 break;
+            case "planets":
+                num = Math.floor(Math.random(62));
+                switch (num) {
 
-            case 37:
-                //species
-                // console.log(APIObject.results[0].hasOwnProperty('people'));
-                if ('people' in APIObject.results[0]) {
-                    console.log("people property in species");
-                    if (APIObject.next != null) {
-                        console.log("species next not null")
-                        for (var i = 0; i < APIObject.results.length; i++) {
-                            console.log(count + " " + APIObject.results[i].name);
-                        }
-                        var url = APIObject.next;
-                        console.log(APIObject.next);
-                        nextRequest(url);
-                    }
-                }
-                // for (var i = 0; i < APIObject.count; i++) {
-                //     // console.log(APIObject.results[i].name);
-                // }
-                //starships
-                // console.log(APIObject.results[0].hasOwnProperty('pilots'));
-                if ('pilots' in APIObject.results[0]) {
-                    console.log("pilots property in starships");
-                    if (APIObject.next != null) {
-                        console.log("pilots next not null")
-                        for (var i = 0; i < APIObject.results.length; i++) {
-                            console.log(count + " " + APIObject.results[i].name);
-                        }
-                        var url = APIObject.next;
-                        console.log(APIObject.next);
-                        nextRequest(url);
-                    }
-                }
-                // for (var i = 0; i < APIObject.count; i++) {
-                //     // console.log(APIObject.results[i].name);
-                // }
-                break;
-            case 39://vehicals
-                // for (var i = 0; i < APIObject.count; i++) {
-                //     // console.log(APIObject.results[i].name);
-                // }
-                if (APIObject.next != null) {
-                    console.log("vehicals next not null")
-                    for (var i = 0; i < APIObject.results.length; i++) {
-                        console.log(count + " " + APIObject.results[i].name);
-                    }
-                    var url = APIObject.next;
-                    console.log(APIObject.next);
-                    nextRequest(url);
                 }
                 break;
+            case "species":
+                num = Math.floor(Math.random(38));
+                switch (num) {
 
-            default:
-                console.log("Hit default case");
+                }
+                break;
+            case "starships":
+                num = Math.floor(Math.random(38));
+                switch (num) {
+
+                }
+                break;
+            case "vehicles":
+                num = Math.floor(Math.random(40));
+                switch (num) {
+
+                }
                 break;
 
         }
@@ -180,7 +121,6 @@ window.onload = function () {
         objectContainer.appendChild(newDiv);
 
     }
-
 
     var userForm = document.getElementById("usernameForm");
 
