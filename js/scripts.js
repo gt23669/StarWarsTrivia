@@ -17,7 +17,7 @@ window.onload = function () {
     var test = 0;
     var used = [[],[],[],[],[],[]];
     var currentClass;
-    className = "films";
+    // className = "films";
     function makeRequest(className) {
         var url = "https://swapi.co/api/" + className + "/";
         url = url + getRandomNum(className);
@@ -32,7 +32,7 @@ window.onload = function () {
     }
 
 
-        makeRequest(className);
+        // makeRequest(className);
 
     function getRandomNum(className) { //We need to know which numbers are broken
         var num;
