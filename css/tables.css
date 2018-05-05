@@ -12,6 +12,24 @@ form{
     text-decoration-color: gold;
 }
 
+table{
+    border: solid 2px green;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tableCategory{
+    font-size: 45px;
+    color: lawngreen;
+}
+td{
+    color: skyblue;
+    font-family: Georgia
+}
+
+a:hover{
+    color: purple;
+}
 body{
     background-color: black;
     background-image:  url("lightspeed.jpg");

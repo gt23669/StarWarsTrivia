@@ -19,14 +19,14 @@ body{
     background-repeat: no-repeat;
 }
 
-table{
+/* table{
     border: solid 2px green;
-}
+} */
 
-td{
+/* td{
     color: skyblue;
     font-family: Georgia
-}
+} */
 
 form{
     color: aliceblue;
@@ -34,7 +34,7 @@ form{
     
 }
 
-a:hover{
+/* a:hover{
     color: purple;
-}
+} */
 
