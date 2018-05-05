@@ -10,7 +10,7 @@ var test = 0;
 var used = [[], [], [], [], [], []];
 var currentClass;
 // className = "films";
-function makeRequest(className) {
+function makeRequest(className, ident) {
     // console.log(el.className);
     var url = "https://swapi.co/api/" + className + "/";
     url = url + getRandomNum(className);
@@ -21,7 +21,7 @@ function makeRequest(className) {
     req.open("GET", url);
     req.send();
 
-    var elem = document.getElementById('dummy');//we need to make the id of each a tag more specific
+    var elem = document.getElementById(ident);//we need to make the id of each a tag more specific
     elem.parentNode.removeChild(elem);
 
 }
