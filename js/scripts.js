@@ -1,24 +1,17 @@
-window.onload = function () {
+// window.onload = function () {
     console.log("JavaScript is working!");
 
-    // var xmlString = "<person id='100'><name>Paul</name><age>20</age></person>";
-    // var jsonString = '{ "id": 100,"name": "Paul", "age":20}';
 
-    // console.log(jsonString);
-
-    // var jsonObject = JSON.parse(jsonString);
-
-    // console.log(jsonObject);
-
-    //get put post remove
-    // var url = "https://api.github.com/users/gt23669";
+    // var el = document.getElementById("test");
+    // el.addEventListener("click", makeRequest, false);
 
     // var catagories = ["films", "people", "planets", "species", "starships", "vehicles"]
     var test = 0;
-    var used = [[],[],[],[],[],[]];
+    var used = [[], [], [], [], [], []];
     var currentClass;
     // className = "films";
     function makeRequest(className) {
+        // console.log(el.className);
         var url = "https://swapi.co/api/" + className + "/";
         url = url + getRandomNum(className);
         var req = new XMLHttpRequest();
@@ -32,31 +25,31 @@ window.onload = function () {
     }
 
 
-        // makeRequest(className);
+    // makeRequest(className);
 
     function getRandomNum(className) { //We need to know which numbers are broken
         var num;
         switch (className) {
             case "films":
-                num = Math.floor(Math.random()*7+1);
+                num = Math.floor(Math.random() * 7 + 1);
                 break;
             case "people":
-                num = Math.floor(Math.random()*87 + 1);
-                if(num == 17){
+                num = Math.floor(Math.random() * 87 + 1);
+                if (num == 17) {
                     num++;
                 }
                 break;
             case "planets":
-                num = Math.floor(Math.random()*61 + 1);
+                num = Math.floor(Math.random() * 61 + 1);
                 break;
             case "species":
-                num = Math.floor(Math.random()*37 + 1);
+                num = Math.floor(Math.random() * 37 + 1);
                 break;
             case "starships":
-                num = Math.floor(Math.random()*37 + 1);
+                num = Math.floor(Math.random() * 37 + 1);
                 break;
             case "vehicles":
-                num = Math.floor(Math.random()*39 + 1);
+                num = Math.floor(Math.random() * 39 + 1);
                 break;
         }
         return num;
@@ -78,84 +71,84 @@ window.onload = function () {
     function LoadAPI(APIObject) {
         var objectContainer = document.getElementById("objectContainer");
         console.log(APIObject);
-        
 
-        
-        
+
+
+
         var question;
         switch (currentClass) {
             case "films":
-            var goodCheck = false;
-            var id = APIObject.episode_id;
-            do{
+                var goodCheck = false;
+                var id = APIObject.episode_id;
+                do {
 
-                for(var i = 0;i<7;i++){
-                    if(used[0][i] == APIObject.episode_id){
-                        id = Math.floor(Math.random()*7+1);
-                        goodCheck = false;
-                        break;
-                    }else{
-                        goodCheck = true;
+                    for (var i = 0; i < 7; i++) {
+                        if (used[0][i] == APIObject.episode_id) {
+                            id = Math.floor(Math.random() * 7 + 1);
+                            goodCheck = false;
+                            break;
+                        } else {
+                            goodCheck = true;
+                        }
                     }
-                }
-            }while(!goodCheck);
-            switch (id) {
+                } while (!goodCheck);
+                switch (id) {
                     //random questions inside nested switch based on currentclass
                     case 1:
-                    used[0][0] = APIObject.episode_id;
-                    question = APIObject.opening_crawl;
+                        used[0][0] = APIObject.episode_id;
+                        question = APIObject.opening_crawl;
                         break;
                     case 2:
-                    used[0][1].APIObject.episode_id;
-                    question = APIObject.opening_crawl;
+                        used[0][1].APIObject.episode_id;
+                        question = APIObject.opening_crawl;
                         break;
                     case 3:
-                    used[0][2] = APIObject.episode_id;
-                    question = APIObject.opening_crawl;
+                        used[0][2] = APIObject.episode_id;
+                        question = APIObject.opening_crawl;
                         break;
                     case 4:
-                    used[0][3] = APIObject.episode_id;
-                    question = APIObject.opening_crawl;
+                        used[0][3] = APIObject.episode_id;
+                        question = APIObject.opening_crawl;
                         break;
                     case 5:
-                    used[0][4] = APIObject.episode_id;
-                    question = APIObject.opening_crawl;
+                        used[0][4] = APIObject.episode_id;
+                        question = APIObject.opening_crawl;
                         break;
                     case 6:
-                    used[0][5] = APIObject.episode_id;
-                    question = APIObject.opening_crawl;
+                        used[0][5] = APIObject.episode_id;
+                        question = APIObject.opening_crawl;
                         break;
                     case 7:
-                    used[0][6] = APIObject.episode_id;
-                    question = APIObject.opening_crawl;
+                        used[0][6] = APIObject.episode_id;
+                        question = APIObject.opening_crawl;
                         break;
 
                 }
                 break;
             case "people":
-            var num = Math.floor(Math.random());
+                var num = Math.floor(Math.random());
                 switch (num) {
                     case 1:
 
-                    break;
-                    
+                        break;
+
                     case 2:
 
-                    break;
+                        break;
 
                     case 3:
 
-                    break;
+                        break;
 
                     case 4:
 
-                    break;
+                        break;
 
                     case 5:
 
-                    break;
+                        break;
 
-                    
+
 
 
                 }
@@ -205,4 +198,4 @@ window.onload = function () {
     //     return false;
     // };
 
-}
+// }
