@@ -29,8 +29,8 @@ function makeRequest(className, ident) {
     req.send();
     console.log(url);
 
-    // var elem = document.getElementById(ident);//we need to make the id of each a tag more specific
-    // elem.parentNode.removeChild(elem);
+    var elem = document.getElementById(ident);//we need to make the id of each a tag more specific
+    elem.parentNode.removeChild(elem);
 
 }
 
@@ -90,17 +90,102 @@ function getRandomNum(className) { //We need to know which numbers are broken
             }
             break;
         case "planets":
-            num = Math.floor(Math.random() * 61 + 1);
+            // num = Math.floor(Math.random() * 61 + 1);
+            num = Math.floor(Math.random() * 5 + 1);
+            do {
+                for (var i = 0; i < 5; i++) {
+                    if (used[2][i] == num) {
+                        num = Math.floor(Math.random() * 5 + 1);
+                        goodCheck = false;
+                        break;
+                    } else {
+                        goodCheck = true;
+                    }
+                }
+            } while (!goodCheck);
             break;
         case "species":
             // num = Math.floor(Math.random() * 37 + 1);
             num = Math.floor(Math.random() * 5 + 1);
+            do {
+                for (var i = 0; i < 5; i++) {
+                    if (used[3][i] == num) {
+                        num = Math.floor(Math.random() * 5 + 1);
+                        goodCheck = false;
+                        break;
+                    } else {
+                        goodCheck = true;
+                    }
+                }
+            } while (!goodCheck);
+            break;
             break;
         case "starships":
-            num = Math.floor(Math.random() * 37 + 1);
+            // num = Math.floor(Math.random() * 37 + 1);
+            num = Math.floor(Math.random() * 5 + 1);
+            do {
+                for (var i = 0; i < 5; i++) {
+                    if (used[4][i] == num) {
+                        num = Math.floor(Math.random() * 5 + 1);
+                        // num = parseInt(num);
+                        goodCheck = false;
+                        break;
+                    } else {
+                        goodCheck = true;
+                    }
+                }
+            } while (!goodCheck);
+
+            switch (num) {
+                case 1:
+                    num = 2;
+                    break;
+                case 2:
+                    num = 3;
+                    break;
+                case 3:
+                    num = 5;
+                    break;
+                case 4:
+                    num = 9;
+                    break;
+                case 5:
+                    num = 10;
+                    break;
+            }
             break;
         case "vehicles":
-            num = Math.floor(Math.random() * 39 + 1);
+            num = Math.floor(Math.random() * 5 + 1);
+            do {
+                for (var i = 0; i < 5; i++) {
+                    if (used[5][i] == num) {
+                        num = Math.floor(Math.random() * 5 + 1);
+                        // num = parseInt(num);
+                        goodCheck = false;
+                        break;
+                    } else {
+                        goodCheck = true;
+                    }
+                }
+            } while (!goodCheck);
+            switch (num) {
+                case 1:
+                    num = 4;
+                    break;
+                case 2:
+                    num = 6;
+                    break;
+                case 3:
+                    num = 7;
+                    break;
+                case 4:
+                    num = 8;
+                    break;
+                case 5:
+                    num = 14;
+                    break;
+            }
+            // num = Math.floor(Math.random() * 39 + 1);
             break;
     }
     return num;
@@ -178,7 +263,7 @@ function LoadAPI(APIObject) {
                     break;
                 case 5:
                     used[0][4] = id;
-                    used[0][4] = APIObject.title
+                    answers[0][4] = APIObject.title
                     question = APIObject.opening_crawl;
                     break;
                 case 6:
@@ -215,7 +300,7 @@ function LoadAPI(APIObject) {
                             question = "Knows 6,000,000 forms of communication."
                             break;
                         case 2:
-                            quetion = "Gets arm removed during a mission with friend. replaces it with one off a dead body"
+                            question = "Gets arm removed during a mission with friend. replaces it with one off a dead body"
                             break;
                     }
                     break;
@@ -270,66 +355,144 @@ function LoadAPI(APIObject) {
 
             }
             break;
-        // case "planets":
-        //     switch (num) {
+        case "planets":
 
-        //     }
-        // break;
+            switch (APIObject.name) {
+                case "Tatooine":
+                    used[2][0] = APIObject.url.substr(APIObject.url.length - 2, 1);
+                    answers[2][0] = APIObject.name;
+                    question = "Homeworld to Anakin and Luke Skywalker.";
+                    break;
+                case "Alderaan":
+                    used[2][1] = APIObject.url.substr(APIObject.url.length - 2, 1);
+                    answers[2][1] = APIObject.name;
+                    question = "First planet destroyed with the DeathStar.";
+                    break;
+                case "Yavin IV":
+                    used[2][2] = APIObject.url.substr(APIObject.url.length - 2, 1);
+                    answers[2][2] = APIObject.name;
+                    question = "Home of the rebal base that later deployed an assult on the DeathStar.";
+                    break;
+                case "Hoth":
+                    used[2][3] = APIObject.url.substr(APIObject.url.length - 2, 1);
+                    answers[2][3] = APIObject.name;
+                    question = "Icy planet that hosted the battle between the Galactic Empire and the Alliance.";
+                    break;
+                case "Dagobah":
+                    used[2][4] = APIObject.url.substr(APIObject.url.length - 2, 1);
+                    answers[2][4] = APIObject.name;
+                    question = "Luke Skywalker, under Jedi Master Yoda, received his advanced training in the ways of the force on this planet.";
+                    break;
+
+            }
+            break;
         case "species":
             switch (APIObject.name) {
                 case "Human":
-                    used[2][0] = APIObject.name;
-                    answers[2][0] = APIObject.name;
+                    used[3][0] = APIObject.url.substr(APIObject.url.length - 2, 1);
+                    answers[3][0] = APIObject.name;
                     question = "This species is classified as a mammal and lives an average life of 120 earth years.";
                     break;
 
                 case "Droid":
-                    used[2][0] = APIObject.name;
-                    answers[2][0] = APIObject.name;
+                    used[3][1] = APIObject.url.substr(APIObject.url.length - 2, 1);
+                    answers[3][1] = APIObject.name;
                     question = "This species is classified as a artificial robot and has an indefinite life span(Debatable).";
                     break;
 
                 case "Wookiee":
-                    used[2][0] = APIObject.name;
-                    answers[2][0] = APIObject.name;
+                    used[3][2] = APIObject.url.substr(APIObject.url.length - 2, 1);
+                    answers[3][2] = APIObject.name;
                     question = "This species is classified as a mammal and lives an average life of 400 earth years.";
                     break;
 
                 case "Rodian":
-                    used[2][0] = APIObject.name;
-                    answers[2][0] = APIObject.name;
+                    used[3][3] = APIObject.url.substr(APIObject.url.length - 2, 1);
+                    answers[3][3] = APIObject.name;
                     question = "This species is classified as a sentient reptile and has an unknown average life span.";
                     break;
 
                 case "Hutt":
-                    used[2][0] = APIObject.name;
-                    answers[2][0] = APIObject.name;
+                    used[3][4] = APIObject.url.substr(APIObject.url.length - 2, 1);
+                    answers[3][4] = APIObject.name;
                     question = "This species is classified as a gastropod and lives an average life of 1000 earth years.";
                     break;
 
 
             }
             break;
-        // case "starships":
-        //     switch (num) {
+        case "starships":
+            switch (APIObject.name) {
+                case "CR90 corvette":
+                    used[4][0] = "1";
+                    answers[4][0] = APIObject.name;
+                    question = "CR90 corvette";
+                    break;
+                case "Star Destroyer":
+                    used[4][1] = "2";
+                    answers[4][1] = APIObject.name;
+                    question = "Star Destroyer";
+                    break;
+                case "Sentinel-class landing craft":
+                    used[4][2] = "3";
+                    answers[4][2] = APIObject.name;
+                    question = "Sentinel-class landing craft";
+                    break;
+                case "Death Star":
+                    used[4][3] = "4";
+                    answers[4][3] = APIObject.name;
+                    question = "Death Star";
+                    break;
+                case "Millennium Falcon":
+                    used[4][4] = "5";
+                    answers[4][4] = APIObject.name;
+                    question = "Millennium Falcon";
+                    break;
 
-        //     }
-        //     break;
-        // case "vehicles":
-        //     switch (num) {
 
-        //     }
-        //     break;
+            }
+            break;
+        case "vehicles":
+            switch (APIObject.name) {
+                case "Sand Crawler":
+                used[5][0] = "1";
+                answers[5][0] = APIObject.name
+                question = "Sand Crawler";
+                break;
+                case "T-16 skyhopper":
+                used[5][1] = "2";
+                answers[5][1] = APIObject.name
+                question = "T-16 skyhopper";
+                break;
+                case "X-34 landspeeder":
+                used[5][2] = "3";
+                answers[5][2] = APIObject.name
+                question = "X-34 landspeeder";
+                break;
+                case "TIE/LN starfighter":
+                used[5][3] = "4";
+                answers[5][3] = APIObject.name
+                question = "TIE/LN starfighter";
+                break;
+                case "Snowspeeder":
+                used[5][4] = "5";
+                answers[5][4] = APIObject.name
+                question = "Snowspeeder";
+                break;
+
+            }
+            break;
 
     }
 
-    var newDiv = document.createElement("div");
-    var newSpan = document.createElement("span");
+    // var newDiv = document.createElement("div");
+    // var newSpan = document.createElement("span");
 
-    newSpan.textContent = question;
+    // newSpan.textContent = question;
 
-    newDiv.appendChild(newSpan);
-    objectContainer.appendChild(newDiv);
+    // newDiv.appendChild(newSpan);
+    // objectContainer.appendChild(newDiv);
+    document.getElementById("intro").innerHTML = question;
 
 }
 
@@ -347,71 +510,3 @@ var userForm = document.getElementById("usernameForm");
 
 // }
 
-//people
-// case 1:
-// var randNum = Math.floor(Math.random()*2+1)
-// switch (randNum){
-// case 1:
-// question = "Gets hand removed by father and kisses sister."
-// break;
-// case 2:
-// question = "Father dies and lives with his Uncle and Aunt on a desent planet."
-// break;
-// }
-
-// case 2:
-// var randNum = Math.floor(Math.random()*2+1)
-// switch (randNum){
-// case 1:
-// question = "Knows 6,000,000 forms of communication."
-// break;
-// case 2:
-// quetion = "Gets arm removed during a mission with friend. replaces it with one off a dead body"
-// }
-
-// case 3:
-// var randNum = Math.floor(Math.random()*3+1)
-// switch (randNum){
-// case 1:
-// question = "The most known droid in the entire franchise."
-// break;
-// case 2: 
-// question = "Saves his master more times than any other character in the franchise."
-// break;
-// case 3:
-// question = "The only droid who did not get his memeory wiped during any war."
-// break;
-// }
-
-// case 4:
-// var randNum = Math.floor(Math.random()*5+1)
-// switch (randNum){
-// case 1:
-// question = "'His deeds will not be forgiven until he merits.'"
-// break;
-// case 2:
-// question = "Destroys an entire planet in order to prove a point."
-// break;
-// case 3:
-// question = "Had a secret apprentice who would be used to take out anybody and anything standing in his way."
-// break;
-// case 4:
-// question = "Get almost every limb replaced with rombotic parts."
-// break:
-// case 5:
-// question = "Nearly murders his son."
-// break;
-// }
-
-// case 5:
-// var randNum = Math.floor(Math.random()*3+1)
-// switch (randNum){
-// case 1:
-// question = "Falls in love with a smuggler."
-// break;
-// case 2:
-// question = "Mother dies whie giving birth to her."
-// break;
-// case 3:
-// question = "Husband would be alive if son wasn't an a*******"
-// }
