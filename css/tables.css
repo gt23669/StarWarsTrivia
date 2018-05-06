@@ -10,21 +10,26 @@ h1{
 form{
     font-size: 30Px;
     text-decoration-color: gold;
+    text-align: center;
 }
 
 table{
     border: solid 2px green;
     margin-left: auto;
     margin-right: auto;
+    
 }
 
 .tableCategory{
     font-size: 45px;
     color: lawngreen;
 }
-td{
+
+.points{
     color: skyblue;
-    font-family: Georgia
+    font-family: Georgia;
+    font-size: 20px;
+
 }
 
 a:hover{
@@ -35,15 +40,4 @@ body{
     background-image:  url("lightspeed.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    
-    
-}
-
-form{
-    color: aliceblue;
-    text-align: center;
-}
-
-.errorText{
-    color: red;
 }
