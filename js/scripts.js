@@ -1,4 +1,16 @@
 // window.onload = function () {
+
+        function continueCSS(){
+
+        document.querySelector("link[href='css/title.css']").href = "css/tables.css";
+        }
+        // var username = userForm["username"].value;
+        // console.log(username);
+
+        // makeRequest();
+
+        // return false;
+    // };
 //     console.log("JavaScript is working!");
 
 //     // var el = document.getElementById("test");
@@ -533,17 +545,7 @@ function LoadAPI(APIObject) {
 
 }
 
-var userForm = document.getElementById("usernameForm");
 
-    // userForm.onsubmit = function(){
-
-    //     var username = userForm["username"].value;
-    //     console.log(username);
-
-    //     makeRequest();
-
-    //     return false;
-    // };
 
 // }
 

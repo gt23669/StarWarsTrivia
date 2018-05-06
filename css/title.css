@@ -2,14 +2,15 @@
     font-size: 60px;
     text-align: center;
     color: gold;
-    margin: 300px auto;
+    margin-top: 300px;
     -webkit-text-stroke-color: dodgerblue;
     -webkit-text-stroke-width: 1px;
 }
 
 form{
     font-size: 30Px;
-    text-decoration-color: gold;
+    color: gold;
+    text-align: center;
 }
 
 body{
@@ -19,20 +20,17 @@ body{
     background-repeat: no-repeat;
 }
 
-/* table{
-    border: solid 2px green;
-} */
+table{
+    border: 0px;
+    font-size: 0px;
+}
 
 /* td{
     color: skyblue;
     font-family: Georgia
 } */
 
-form{
-    color: aliceblue;
-    text-align: center;
-    
-}
+
 
 /* a:hover{
     color: purple;
