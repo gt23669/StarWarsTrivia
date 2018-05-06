@@ -214,8 +214,9 @@ function APIHandler() {
 }
 
 function LoadAPI(APIObject) {
-    var objectContainer = document.getElementById("objectContainer");
-    console.log(APIObject);
+    // var objectContainer = document.getElementById("objectContainer");
+    var introContainer = document.getElementById("intro");
+    // console.log(APIObject);
 
 
 
@@ -522,7 +523,13 @@ function LoadAPI(APIObject) {
 
     // newDiv.appendChild(newSpan);
     // objectContainer.appendChild(newDiv);
-    document.getElementById("intro").innerHTML = question;
+    introContainer.innerHTML = question;
+    // try {
+        
+    // } catch (error) {
+    //     console.log("intro container caught exception");
+        
+    // }
 
 }
 
