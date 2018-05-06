@@ -3,6 +3,7 @@
         function continueCSS(){
 
         document.querySelector("link[href='css/title.css']").href = "css/tables.css";
+        document.getElementById("answer").value = "";
         }
         // var username = userForm["username"].value;
         // console.log(username);
