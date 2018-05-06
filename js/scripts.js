@@ -83,7 +83,8 @@ function getRandomNum(className) { //We need to know which numbers are broken
             } while (!goodCheck);
             break;
         case "people":
-            num = Math.floor(Math.random() * 87 + 1);
+            // num = Math.floor(Math.random() * 87 + 1);
+            num = Math.floor(Math.random() * 5 + 1);
             if (num == 17) {
                 num++;
             }
@@ -194,38 +195,86 @@ function LoadAPI(APIObject) {
             }
             break;
         case "people":
-            var num = Math.floor(Math.random());
+            var num = Math.floor(Math.random() * 5 + 1);
             switch (num) {
                 case 1:
-
+                    var randNum = Math.floor(Math.random() * 2 + 1)
+                    switch (randNum) {
+                        case 1:
+                            question = "Gets hand removed by father and kisses sister."
+                            break;
+                        case 2:
+                            question = "Father dies and lives with his Uncle and Aunt on a desent planet."
+                            break;
+                    }
                     break;
-
                 case 2:
-
+                    var randNum = Math.floor(Math.random() * 2 + 1)
+                    switch (randNum) {
+                        case 1:
+                            question = "Knows 6,000,000 forms of communication."
+                            break;
+                        case 2:
+                            quetion = "Gets arm removed during a mission with friend. replaces it with one off a dead body"
+                            break;
+                    }
                     break;
-
                 case 3:
-
+                    var randNum = Math.floor(Math.random() * 3 + 1)
+                    switch (randNum) {
+                        case 1:
+                            question = "The most known droid in the entire franchise."
+                            break;
+                        case 2:
+                            question = "Saves his master more times than any other character in the franchise."
+                            break;
+                        case 3:
+                            question = "The only droid who did not get his memeory wiped during any war."
+                            break;
+                    }
                     break;
-
                 case 4:
-
+                    var randNum = Math.floor(Math.random() * 5 + 1)
+                    switch (randNum) {
+                        case 1:
+                            question = "'His deeds will not be forgiven until he merits.'"
+                            break;
+                        case 2:
+                            question = "Destroys an entire planet in order to prove a point."
+                            break;
+                        case 3:
+                            question = "Had a secret apprentice who would be used to take out anybody and anything standing in his way."
+                            break;
+                        case 4:
+                            question = "Get almost every limb replaced with rombotic parts."
+                            break;
+                        case 5:
+                            question = "Nearly murders his son."
+                            break;
+                    }
                     break;
-
                 case 5:
-
+                    var randNum = Math.floor(Math.random() * 3 + 1)
+                    switch (randNum) {
+                        case 1:
+                            question = "Falls in love with a smuggler."
+                            break;
+                        case 2:
+                            question = "Mother dies whie giving birth to her."
+                            break;
+                        case 3:
+                            question = "Husband would be alive if son wasn't an a*******"
+                            break;
+                    }
                     break;
 
-
-
-
             }
             break;
-        case "planets":
-            switch (num) {
+        // case "planets":
+        //     switch (num) {
 
-            }
-            break;
+        //     }
+        // break;
         case "species":
             switch (APIObject.name) {
                 case "Human":
@@ -261,16 +310,16 @@ function LoadAPI(APIObject) {
 
             }
             break;
-        case "starships":
-            switch (num) {
+        // case "starships":
+        //     switch (num) {
 
-            }
-            break;
-        case "vehicles":
-            switch (num) {
+        //     }
+        //     break;
+        // case "vehicles":
+        //     switch (num) {
 
-            }
-            break;
+        //     }
+        //     break;
 
     }
 
@@ -299,70 +348,70 @@ var userForm = document.getElementById("usernameForm");
 // }
 
 //people
-case 1:
-var randNum = Math.floor(Math.Random()*2+1)
-switch (randNum){
-case 1:
-question = "Gets hand removed by father and kisses sister."
-break;
-case 2:
-question = "Father dies and lives with his Uncle and Aunt on a desent planet."
-break;
-}
+// case 1:
+// var randNum = Math.floor(Math.random()*2+1)
+// switch (randNum){
+// case 1:
+// question = "Gets hand removed by father and kisses sister."
+// break;
+// case 2:
+// question = "Father dies and lives with his Uncle and Aunt on a desent planet."
+// break;
+// }
 
-case 2:
-var randNum = Math.floor(Math.Random()*2+1)
-switch (randNum){
-case 1:
-question = "Knows 6,000,000 forms of communication."
-break;
-case 2:
-quetion = "Gets arm removed during a mission with friend. replaces it with one off a dead body"
-}
+// case 2:
+// var randNum = Math.floor(Math.random()*2+1)
+// switch (randNum){
+// case 1:
+// question = "Knows 6,000,000 forms of communication."
+// break;
+// case 2:
+// quetion = "Gets arm removed during a mission with friend. replaces it with one off a dead body"
+// }
 
-case 3:
-var randNum = Math.floor(Math.Random()*3+1)
-switch (randNum){
-case 1:
-question = "The most known droid in the entire franchise."
-break;
-case 2: 
-question = "Saves his master more times than any other character in the franchise."
-break;
-case 3:
-question = "The only droid who did not get his memeory wiped during any war."
-break;
-}
+// case 3:
+// var randNum = Math.floor(Math.random()*3+1)
+// switch (randNum){
+// case 1:
+// question = "The most known droid in the entire franchise."
+// break;
+// case 2: 
+// question = "Saves his master more times than any other character in the franchise."
+// break;
+// case 3:
+// question = "The only droid who did not get his memeory wiped during any war."
+// break;
+// }
 
-case 4:
-var randNum = Math.floor(Math.Random()*5+1)
-switch (randNum){
-case 1:
-question = "'His deeds will not be forgiven until he merits.'"
-break;
-case 2:
-question = "Destroys an entire planet in order to prove a point."
-break;
-case 3:
-question = "Had a secret apprentice who would be used to take out anybody and anything standing in his way."
-break;
-case 4:
-question = "Get almost every limb replaced with rombotic parts."
-break:
-case 5:
-question = "Nearly murders his son."
-break;
-}
+// case 4:
+// var randNum = Math.floor(Math.random()*5+1)
+// switch (randNum){
+// case 1:
+// question = "'His deeds will not be forgiven until he merits.'"
+// break;
+// case 2:
+// question = "Destroys an entire planet in order to prove a point."
+// break;
+// case 3:
+// question = "Had a secret apprentice who would be used to take out anybody and anything standing in his way."
+// break;
+// case 4:
+// question = "Get almost every limb replaced with rombotic parts."
+// break:
+// case 5:
+// question = "Nearly murders his son."
+// break;
+// }
 
-case 5:
-var randNum = Math.floor(Math.Random()*3+1)
-switch (randNum){
-case 1:
-question = "Falls in love with a smuggler."
-break;
-case 2:
-question = "Mother dies whie giving birth to her."
-break;
-case 3:
-question = "Husband would be alive if son wasn't an a*******"
-}
+// case 5:
+// var randNum = Math.floor(Math.random()*3+1)
+// switch (randNum){
+// case 1:
+// question = "Falls in love with a smuggler."
+// break;
+// case 2:
+// question = "Mother dies whie giving birth to her."
+// break;
+// case 3:
+// question = "Husband would be alive if son wasn't an a*******"
+// }
