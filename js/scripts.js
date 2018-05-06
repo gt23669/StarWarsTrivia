@@ -1,28 +1,67 @@
-// window.onload = function () {
+window.onload = function () {
+    console.log("onload");
+    createCookie("username","Daniel",30);
+    //add cookie function here to load in cookie info
 
-        function continueCSS(){
 
-        document.querySelector("link[href='css/title.css']").href = "css/tables.css";
-        document.getElementById("answer").value = "";
-        }
-        // var username = userForm["username"].value;
-        // console.log(username);
+}
 
-        // makeRequest();
+function createCookie(cname,cvalue,cdays) {
+	if (cdays) {
+		var date = new Date();
+		date.setTime(date.getTime()+(cdays*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+    }else{
+        var expires = "";
+    } 
+    
+    document.cookie = cname+"="+cvalue+expires+"; path=/";
+    readCookie(cname);
+}
 
-        // return false;
-    // };
-//     console.log("JavaScript is working!");
+function readCookie(cname) {
+	var ReadcName = cname + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(ReadcName) == 0) return c.substring(ReadcName.length,c.length);
+	}
+	return null;
+}
 
-//     // var el = document.getElementById("test");
-//     // el.addEventListener("click", game, false);
+function eraseCookie(name) {
+	createCookie(name,"",-1);
+}
 
-//     document.addEventListener('click', function (event) {
-//         if (event.target.id == "test") {
-//             console.log("hit");
-//         }
-//     }, false);
-// }
+
+function continueCSS() {
+    
+    // var x = document.getElementById("Input").children.answer;
+    //  console.log("text field value: "+x.value);
+    // console.log("text field id: "+x.id);
+    // if(x.id == "answer"){
+    //     setCookie("username",x.value, 30);
+
+    // }else{
+    //     console.log("no cookie");
+
+    // }
+
+    // var x = document.getElementById("Input").children.answer;
+    // console.log("text field value: "+x.value);
+    // console.log("text field id: "+x.id);
+    // x.id = "triviaAnswer";
+    // console.log(x.id);
+    // var textEl = document.getElementById("answer");
+    // textEl.id = "test";
+    // console.log(textEl.id);
+
+    document.querySelector("link[href='css/title.css']").href = "css/tables.css";
+    // document.getElementById("answer").value = "";
+    // var input = document.getElementById("Input");
+
+}
 
 // var catagories = ["films", "people", "planets", "species", "starships", "vehicles"]
 var test = 0;
@@ -538,10 +577,10 @@ function LoadAPI(APIObject) {
     // objectContainer.appendChild(newDiv);
     introContainer.innerHTML = question;
     // try {
-        
+
     // } catch (error) {
     //     console.log("intro container caught exception");
-        
+
     // }
 
 }
