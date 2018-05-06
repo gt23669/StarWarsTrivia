@@ -85,9 +85,18 @@ function getRandomNum(className) { //We need to know which numbers are broken
         case "people":
             // num = Math.floor(Math.random() * 87 + 1);
             num = Math.floor(Math.random() * 5 + 1);
-            if (num == 17) {
-                num++;
-            }
+            do {
+
+                for (var i = 0; i < 5; i++) {
+                    if (used[1][i] === num) {
+                        num = Math.floor(Math.random() * 5 + 1);
+                        goodCheck = false;
+                        break;
+                    } else {
+                        goodCheck = true;
+                    }
+                }
+            } while (!goodCheck);
             break;
         case "planets":
             // num = Math.floor(Math.random() * 61 + 1);
@@ -214,7 +223,6 @@ function LoadAPI(APIObject) {
     var question;
     switch (currentClass) {
         case "films":
-            var goodCheck = false;
             var id = APIObject.episode_id;
             switch (id) {
                 case 1:
@@ -281,8 +289,22 @@ function LoadAPI(APIObject) {
             break;
         case "people":
             var num = Math.floor(Math.random() * 5 + 1);
+            do {
+
+                for (var i = 0; i < 5; i++) {
+                    if (used[1][i] === num) {
+                        num = Math.floor(Math.random() * 5 + 1);
+                        goodCheck = false;
+                        break;
+                    } else {
+                        goodCheck = true;
+                    }
+                }
+            } while (!goodCheck);
             switch (num) {
                 case 1:
+                    used[1][0] = num;
+                    answers[1][0] = APIObject.name;
                     var randNum = Math.floor(Math.random() * 2 + 1)
                     switch (randNum) {
                         case 1:
@@ -294,6 +316,8 @@ function LoadAPI(APIObject) {
                     }
                     break;
                 case 2:
+                    used[1][1] = num;
+                    answers[1][1] = APIObject.name;
                     var randNum = Math.floor(Math.random() * 2 + 1)
                     switch (randNum) {
                         case 1:
@@ -305,6 +329,8 @@ function LoadAPI(APIObject) {
                     }
                     break;
                 case 3:
+                    used[1][2] = num;
+                    answers[1][2] = APIObject.name;
                     var randNum = Math.floor(Math.random() * 3 + 1)
                     switch (randNum) {
                         case 1:
@@ -319,6 +345,8 @@ function LoadAPI(APIObject) {
                     }
                     break;
                 case 4:
+                    used[1][3] = num;
+                    answers[1][3] = APIObject.name;
                     var randNum = Math.floor(Math.random() * 5 + 1)
                     switch (randNum) {
                         case 1:
@@ -339,6 +367,8 @@ function LoadAPI(APIObject) {
                     }
                     break;
                 case 5:
+                    used[1][4] = num;
+                    answers[1][4] = APIObject.name;
                     var randNum = Math.floor(Math.random() * 3 + 1)
                     switch (randNum) {
                         case 1:
@@ -426,27 +456,27 @@ function LoadAPI(APIObject) {
                 case "CR90 corvette":
                     used[4][0] = "1";
                     answers[4][0] = APIObject.name;
-                    question = "CR90 corvette";
+                    question = "Also known as Alderaan cruisers, Corellian corvettes, or blockade runners.";
                     break;
                 case "Star Destroyer":
                     used[4][1] = "2";
                     answers[4][1] = APIObject.name;
-                    question = "Star Destroyer";
+                    question = "A dagger-shaped type of capital ship that was used by the Galactic Republic, Empire, and First Order.";
                     break;
                 case "Sentinel-class landing craft":
                     used[4][2] = "3";
                     answers[4][2] = APIObject.name;
-                    question = "Sentinel-class landing craft";
+                    question = "Also known as an Imperial landing craft, this was a large-scale troop transport utilized by the Galactic Empire.";
                     break;
                 case "Death Star":
                     used[4][3] = "4";
                     answers[4][3] = APIObject.name;
-                    question = "Death Star";
+                    question = "Gargantuan space station armed with a planet destroying superlaser. ";
                     break;
                 case "Millennium Falcon":
                     used[4][4] = "5";
                     answers[4][4] = APIObject.name;
-                    question = "Millennium Falcon";
+                    question = "Original designation YT-1300 492727ZED, used by a pair of smugglers.";
                     break;
 
 
@@ -455,30 +485,30 @@ function LoadAPI(APIObject) {
         case "vehicles":
             switch (APIObject.name) {
                 case "Sand Crawler":
-                used[5][0] = "1";
-                answers[5][0] = APIObject.name
-                question = "Sand Crawler";
-                break;
+                    used[5][0] = "1";
+                    answers[5][0] = APIObject.name
+                    question = "Huge mobile fortresses which could be seen on the deserts of Tatooine. Used by the Jawas.";
+                    break;
                 case "T-16 skyhopper":
-                used[5][1] = "2";
-                answers[5][1] = APIObject.name
-                question = "T-16 skyhopper";
-                break;
+                    used[5][1] = "2";
+                    answers[5][1] = APIObject.name
+                    question = "Personal repulsorlift airspeeders. Luke Skywalker owned one on Tatooine prior to the Battle of Yavin.";
+                    break;
                 case "X-34 landspeeder":
-                used[5][2] = "3";
-                answers[5][2] = APIObject.name
-                question = "X-34 landspeeder";
-                break;
+                    used[5][2] = "3";
+                    answers[5][2] = APIObject.name
+                    question = "These vehicles hovered up to a meter off the ground, fitted with powerful repulsorlift engines and lacked any combat capability.";
+                    break;
                 case "TIE/LN starfighter":
-                used[5][3] = "4";
-                answers[5][3] = APIObject.name
-                question = "TIE/LN starfighter";
-                break;
+                    used[5][3] = "4";
+                    answers[5][3] = APIObject.name
+                    question = "Standard Imperial starfighter seen in massive numbers.";
+                    break;
                 case "Snowspeeder":
-                used[5][4] = "5";
-                answers[5][4] = APIObject.name
-                question = "Snowspeeder";
-                break;
+                    used[5][4] = "5";
+                    answers[5][4] = APIObject.name
+                    question = "With two heavy forward-facing laser cannons and a harpoon cannon,These vehicles with modified to fly on the icy planet hoth during the Battle of Hoth.";
+                    break;
 
             }
             break;
