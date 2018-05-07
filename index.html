@@ -166,9 +166,7 @@
             </tr>
             <tr>
                 <td class=points>
-                    <a onclick="makeRequest('species', 'species5')" href="#" id="species5">
-                        500
-                    </a>
+                    <a onclick="makeRequest('species', 'species5')" href="#" id="species5">500</a>
                 </td>
                 <td class=points>
                     <a onclick="makeRequest('vehicles', 'vehicles5')" href="#" id="vehicles5">
@@ -198,12 +196,15 @@
             </tr>
         </table>
         <form id="answerForm">
-            <div id="Input">
-                Name:
+            <div id="input">
+
+                <div id="inputType">
+                    Name:
+                </div>
                 <input id="answer" name="answer" type="text" />
                 <span id="answerError" class="errorText"></span>
-            </div>
-            <div>
+                <div>
+                    </div>
                 <input type="button" value="Submit" onclick="continueCSS()">
                 <!-- <button type="button" onsubmit="">GO</button> -->
             </div>
@@ -212,7 +213,7 @@
             <!-- </div> -->
         </form>
 
-        <P class="Score">Score: 0 </P>
+        <P id="Score" class="Score">Score: 0 </P>
     </div>
 </body>
 
