@@ -1,65 +1,62 @@
 window.onload = function () {
     console.log("onload");
-    createCookie("username","Daniel",30);
+    createCookie("username", "Daniel", 30);
     //add cookie function here to load in cookie info
 
 
 }
 
-function createCookie(cname,cvalue,cdays) {
-	if (cdays) {
-		var date = new Date();
-		date.setTime(date.getTime()+(cdays*24*60*60*1000));
-		var expires = "; expires="+date.toGMTString();
-    }else{
+function createCookie(cname, cvalue, cdays) {
+    if (cdays) {
+        var date = new Date();
+        date.setTime(date.getTime() + (cdays * 24 * 60 * 60 * 1000));
+        var expires = "; expires=" + date.toGMTString();
+    } else {
         var expires = "";
-    } 
-    
-    document.cookie = cname+"="+cvalue+expires+"; path=/";
+    }
+
+    document.cookie = cname + " = " + cvalue + expires + "; path=/";
+
     readCookie(cname);
 }
 
 function readCookie(cname) {
-	var ReadcName = cname + "=";
-	var ca = document.cookie.split(';');
-	for(var i=0;i < ca.length;i++) {
-		var c = ca[i];
-		while (c.charAt(0)==' ') c = c.substring(1,c.length);
-		if (c.indexOf(ReadcName) == 0) return c.substring(ReadcName.length,c.length);
-	}
-	return null;
+    var ReadcName = cname + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(ReadcName) == 0) return c.substring(ReadcName.length, c.length);
+    }
+    return null;
 }
 
 function eraseCookie(name) {
-	createCookie(name,"",-1);
+    createCookie(name, "", -1);
 }
 
+var numInputs = 0;
 
 function continueCSS() {
-    
-    // var x = document.getElementById("Input").children.answer;
-    //  console.log("text field value: "+x.value);
-    // console.log("text field id: "+x.id);
-    // if(x.id == "answer"){
-    //     setCookie("username",x.value, 30);
 
-    // }else{
-    //     console.log("no cookie");
+    numInputs++;
 
-    // }
+    if (numInputs === 1) {
+        document.querySelector("link[href='css/title.css']").href = "css/tables.css";
+        document.getElementById("intro").innerHTML = "Choose a category and point value."
+        document.getElementById("Input").innerHTML = "Answer"
+    } else if (numInputs > 1 && numInputs < 31) {
+        document.querySelector("link[href='css/questions.css']").href = "css/tables.css";
+        document.getElementById("intro").innerHTML = "Choose a category and point value."
+    } else if (numInputs === 31) {
+        GameOver();
+    }
 
-    // var x = document.getElementById("Input").children.answer;
-    // console.log("text field value: "+x.value);
-    // console.log("text field id: "+x.id);
-    // x.id = "triviaAnswer";
-    // console.log(x.id);
-    // var textEl = document.getElementById("answer");
-    // textEl.id = "test";
-    // console.log(textEl.id);
+}
 
-    document.querySelector("link[href='css/title.css']").href = "css/tables.css";
-    // document.getElementById("answer").value = "";
-    // var input = document.getElementById("Input");
+function GameOver() {
+
+    document.querySelector("link[href='css/tables.css']").href = "css/gameOver.css";
 
 }
 
@@ -71,6 +68,7 @@ var currentClass;
 // className = "films";
 function makeRequest(className, ident) {
     // console.log(el.className);
+    document.querySelector("link[href='css/tables.css']").href = "css/questions.css";
     var url = "https://swapi.co/api/" + className + "/";
     url = url + getRandomNum(className);
     var req = new XMLHttpRequest();

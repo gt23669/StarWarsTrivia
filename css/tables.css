@@ -1,8 +1,10 @@
-h1{
+.intro{
+    margin-left: 10%;
+    margin-right: 10%;
     font-size: 60px;
     text-align: center;
     color: gold;
-    margin-top: 300px;
+    /* margin-top: 300px; */
     -webkit-text-stroke-color: dodgerblue;
     -webkit-text-stroke-width: 1px;
 }
@@ -22,7 +24,7 @@ table{
 
 .tableCategory{
     font-size: 45px;
-    color: lawngreen;
+    color: green;
 }
 
 .points{
@@ -35,9 +37,34 @@ table{
 a:hover{
     color: purple;
 }
+
+td{
+    border: solid green 5px;
+    color: skyblue;
+    font-family: Georgia;
+    text-align: center;
+    padding: 5px;
+}
+
 body{
     background-color: black;
-    background-image:  url("lightspeed.jpg");
+    background-image:  url("falcon.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.prettyTable{
+    margin: 7%;
+    margin-top: 15%;
+    padding: 20px;
+    background-color: silver;
+    opacity: .75;
+    border: solid grey 5px;
+}
+
+.Score{
+   
+    font-size: 20px;
+    margin-left: 80%;
+
 }

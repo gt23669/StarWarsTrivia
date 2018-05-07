@@ -2,7 +2,7 @@
     font-size: 60px;
     text-align: center;
     color: gold;
-    margin-top: 300px;
+    /* margin-top: 300px; */
     -webkit-text-stroke-color: dodgerblue;
     -webkit-text-stroke-width: 1px;
 }
@@ -15,7 +15,7 @@ form{
 
 body{
     background-color: black;
-    background-image:  url("lightspeed.jpg");
+    background-image:  url("falcon.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -23,6 +23,23 @@ body{
 table{
     border: 0px;
     font-size: 0px;
+}
+
+.prettyTable{
+    margin: 7%;
+    margin-top: 15%;
+    padding: 20px;
+    background-color: silver;
+    opacity: .9;
+    border: solid grey 5px;
+    border-radius: 50px;
+}
+
+.Score{
+   
+    font-size: 0px;
+    margin-left: 300px;
+
 }
 
 /* td{

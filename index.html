@@ -11,203 +11,209 @@
 </head>
 
 <body>
-    <h1 id="intro" class="intro">Welcome to StarWars Jeopardy for NERDS!!!!</h1>
-    <table>
-        <tr>
-            <td class="tableCategory">
-                Species
-            </td>
-            <td class="tableCategory">
-                Vehicles
-            </td>
-            <td class="tableCategory">
-                People
-            </td>
-            <td class="tableCategory">
-                Planet
-            </td>
-            <td class="tableCategory">
-                Films
-            </td>
-            <td class="tableCategory">
-                Starships
-            </td>
-        </tr>
-        <tr>
-            <td class=points>
-                <a onclick="makeRequest('species', 'species1')" href="#" id="species1">
-                    100
-                </a>
-            </td>
-            <td class=points>
-                <a onclick="makeRequest('vehicles', 'vehicles1')" href="#" id="vehicles1">
-                    100
-                </a>
-            </td>
-            <td class=points>
-                <a onclick="makeRequest('people', 'people1')" href="#" id="people1">
-                    100
-                </a>
-            </td>
-            <td class=points>
-                <a onclick="makeRequest('planets', 'planet1')" href="#" id="planet1">
-                    100
-                </a>
-            </td>
-            <td class=points>
-                <a onclick="makeRequest('films','films1')" href="#" id="films1">
-                    100
-                </a>
-            </td>
-            <td class=points>
-                <a onclick="makeRequest('starships', 'starships1')" href="#" id="starships1">
-                    100
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <td class=points>
-                <a onclick="makeRequest('species', 'species2')" href="#" id="species2">
-                    200
-                </a>
-            </td>
-            <td class=points>
-                <a onclick="makeRequest('vehicles', 'vehicles2')" href="#" id="vehicles2">
-                    200
-                </a>
-            </td>
-            <td class=points>
-                <a onclick="makeRequest('people', 'people2')" href="#" id="people2">
-                    200
-                </a>
-            </td>
-            <td class=points>
-                <a onclick="makeRequest('planets', 'planet2')" href="#" id="planet2">
-                    200
-                </a>
-            </td>
-            <td class=points>
-                <a onclick="makeRequest('films', 'films2')" href="#" id="films2">
-                    200
-                </a>
-            </td>
-            <td class=points>
-                <a onclick="makeRequest('starships', 'starships2')" href="#" id="starships2">
-                    200
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <td class=points>
-                <a onclick="makeRequest('species', 'species3')" href="#" id="species3">
-                    300
-                </a>
-            </td>
-            <td class=points>
-                <a onclick="makeRequest('vehicles', 'vehicles3')" href="#" id="vehicles3">
-                    300
-                </a>
-            </td>
-            <td class=points>
-                <a onclick="makeRequest('people', 'people3')" href="#" id="people3">
-                    300
-                </a>
-            </td>
-            <td class=points>
-                <a onclick="makeRequest('planets', 'planet3')" href="#" id="planet3">
-                    300
-                </a>
-            </td>
-            <td class=points>
-                <a onclick="makeRequest('films', 'films3')" href="#" id="films3">
-                    300
-                </a>
-            </td>
-            <td class=points>
-                <a onclick="makeRequest('starships', 'starships3')" href="#" id="starships3">
-                    300
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <td class=points>
-                <a onclick="makeRequest('species', 'species4')" href="#" id="species4">
-                    400
-                </a>
-            </td>
-            <td class=points>
-                <a onclick="makeRequest('vehicles', 'vehicles4')" href="#" id="vehicles4">
-                    400
-                </a>
-            </td>
-            <td class=points>
-                <a onclick="makeRequest('people', 'people4')" href="#" id="people4">
-                    400
-                </a>
-            </td>
-            <td class=points>
-                <a onclick="makeRequest('planets', 'planet4')" href="#" id="planet4">
-                    400
-                </a>
-            </td>
-            <td class=points>
-                <a onclick="makeRequest('films', 'films4')" href="#" id="films4">
-                    400
-                </a>
-            </td>
-            <td class=points>
-                <a onclick="makeRequest('starships', 'starships4')" href="#" id="starships4">
-                    400
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <td class=points>
-                <a onclick="makeRequest('species', 'species5')" href="#" id="species5">
-                    500
-                </a>
-            </td>
-            <td class=points>
-                <a onclick="makeRequest('vehicles', 'vehicles5')" href="#" id="vehicles5">
-                    500
-                </a>
-            </td>
-            <td class=points>
-                <a onclick="makeRequest('people', 'people5')" href="#" id="people5">
-                    500
-                </a>
-            </td>
-            <td class=points>
-                <a onclick="makeRequest('planets', 'planet5')" href="#" id="planet5">
-                    500
-                </a>
-            </td>
-            <td class=points>
-                <a onclick="makeRequest('films', 'films5')" href="#" id="films5">
-                    500
-                </a>
-            </td>
-            <td class=points>
-                <a onclick="makeRequest('starships', 'starships5')" href="#" id="starships5">
-                    500
-                </a>
-            </td>
-        </tr>
-    </table>
-    <form id="answerForm">
-        <div id="Input">
-            Name:
-            <input id="answer" name="answer" type="text" />
-            <span id="answerError" class="errorText"></span>
-        </div>
-        <div>
-            <input type="button" value="Submit" onclick="continueCSS()">
-            <!-- <button type="button" onsubmit="">GO</button> -->
-        </div>
 
-        <!-- <div id="objectContainer"> -->
-        <!-- </div> -->
-    </form>
+    <div class="prettyTable">
+
+        <h1 id="intro" class="intro">Welcome to StarWars Jeopardy for NERDS!!!!</h1>
+        <table>
+            <tr>
+                <td class="tableCategory">
+                    Species
+                </td>
+                <td class="tableCategory">
+                    Vehicles
+                </td>
+                <td class="tableCategory">
+                    People
+                </td>
+                <td class="tableCategory">
+                    Planet
+                </td>
+                <td class="tableCategory">
+                    Films
+                </td>
+                <td class="tableCategory">
+                    Starships
+                </td>
+            </tr>
+            <tr>
+                <td class=points>
+                    <a onclick="makeRequest('species', 'species1')" href="#" id="species1">
+                        100
+                    </a>
+                </td>
+                <td class=points>
+                    <a onclick="makeRequest('vehicles', 'vehicles1')" href="#" id="vehicles1">
+                        100
+                    </a>
+                </td>
+                <td class=points>
+                    <a onclick="makeRequest('people', 'people1')" href="#" id="people1">
+                        100
+                    </a>
+                </td>
+                <td class=points>
+                    <a onclick="makeRequest('planets', 'planet1')" href="#" id="planet1">
+                        100
+                    </a>
+                </td>
+                <td class=points>
+                    <a onclick="makeRequest('films','films1')" href="#" id="films1">
+                        100
+                    </a>
+                </td>
+                <td class=points>
+                    <a onclick="makeRequest('starships', 'starships1')" href="#" id="starships1">
+                        100
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td class=points>
+                    <a onclick="makeRequest('species', 'species2')" href="#" id="species2">
+                        200
+                    </a>
+                </td>
+                <td class=points>
+                    <a onclick="makeRequest('vehicles', 'vehicles2')" href="#" id="vehicles2">
+                        200
+                    </a>
+                </td>
+                <td class=points>
+                    <a onclick="makeRequest('people', 'people2')" href="#" id="people2">
+                        200
+                    </a>
+                </td>
+                <td class=points>
+                    <a onclick="makeRequest('planets', 'planet2')" href="#" id="planet2">
+                        200
+                    </a>
+                </td>
+                <td class=points>
+                    <a onclick="makeRequest('films', 'films2')" href="#" id="films2">
+                        200
+                    </a>
+                </td>
+                <td class=points>
+                    <a onclick="makeRequest('starships', 'starships2')" href="#" id="starships2">
+                        200
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td class=points>
+                    <a onclick="makeRequest('species', 'species3')" href="#" id="species3">
+                        300
+                    </a>
+                </td>
+                <td class=points>
+                    <a onclick="makeRequest('vehicles', 'vehicles3')" href="#" id="vehicles3">
+                        300
+                    </a>
+                </td>
+                <td class=points>
+                    <a onclick="makeRequest('people', 'people3')" href="#" id="people3">
+                        300
+                    </a>
+                </td>
+                <td class=points>
+                    <a onclick="makeRequest('planets', 'planet3')" href="#" id="planet3">
+                        300
+                    </a>
+                </td>
+                <td class=points>
+                    <a onclick="makeRequest('films', 'films3')" href="#" id="films3">
+                        300
+                    </a>
+                </td>
+                <td class=points>
+                    <a onclick="makeRequest('starships', 'starships3')" href="#" id="starships3">
+                        300
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td class=points>
+                    <a onclick="makeRequest('species', 'species4')" href="#" id="species4">
+                        400
+                    </a>
+                </td>
+                <td class=points>
+                    <a onclick="makeRequest('vehicles', 'vehicles4')" href="#" id="vehicles4">
+                        400
+                    </a>
+                </td>
+                <td class=points>
+                    <a onclick="makeRequest('people', 'people4')" href="#" id="people4">
+                        400
+                    </a>
+                </td>
+                <td class=points>
+                    <a onclick="makeRequest('planets', 'planet4')" href="#" id="planet4">
+                        400
+                    </a>
+                </td>
+                <td class=points>
+                    <a onclick="makeRequest('films', 'films4')" href="#" id="films4">
+                        400
+                    </a>
+                </td>
+                <td class=points>
+                    <a onclick="makeRequest('starships', 'starships4')" href="#" id="starships4">
+                        400
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td class=points>
+                    <a onclick="makeRequest('species', 'species5')" href="#" id="species5">
+                        500
+                    </a>
+                </td>
+                <td class=points>
+                    <a onclick="makeRequest('vehicles', 'vehicles5')" href="#" id="vehicles5">
+                        500
+                    </a>
+                </td>
+                <td class=points>
+                    <a onclick="makeRequest('people', 'people5')" href="#" id="people5">
+                        500
+                    </a>
+                </td>
+                <td class=points>
+                    <a onclick="makeRequest('planets', 'planet5')" href="#" id="planet5">
+                        500
+                    </a>
+                </td>
+                <td class=points>
+                    <a onclick="makeRequest('films', 'films5')" href="#" id="films5">
+                        500
+                    </a>
+                </td>
+                <td class=points>
+                    <a onclick="makeRequest('starships', 'starships5')" href="#" id="starships5">
+                        500
+                    </a>
+                </td>
+            </tr>
+        </table>
+        <form id="answerForm">
+            <div id="Input">
+                Name:
+                <input id="answer" name="answer" type="text" />
+                <span id="answerError" class="errorText"></span>
+            </div>
+            <div>
+                <input type="button" value="Submit" onclick="continueCSS()">
+                <!-- <button type="button" onsubmit="">GO</button> -->
+            </div>
+
+            <!-- <div id="objectContainer"> -->
+            <!-- </div> -->
+        </form>
+
+        <P class="Score">Score: 0 </P>
+    </div>
 </body>
 
 </html>
