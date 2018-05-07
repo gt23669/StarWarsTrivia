@@ -1,42 +1,81 @@
 window.onload = function () {
-    console.log("onload");
-    createCookie("username","Daniel",30);
+    // createCookie("username", "Daniel", -1);
+    // createCookie("score",100,-1);
+    // readCookie("username");
+    // readCookie("score");
+    // console.log(document.cookie);
+    // eraseCookie("username");
+    // eraseCookie("score");
+    // eraseCookie("username=Daniel"); 
+    // eraseCookie("visits");
+    // createCookie("score", "100", 30);
     //add cookie function here to load in cookie info
-
+    // checkCookie();
+    // continueCSS();
 
 }
+function checkCookie() {
+    var username = readCookie("username");
+    // console.log("username: "+username);
+    if (username != "" ) {
+        alert("Welcome back " + username);
+    } else {
+        // var user = prompt("What is your name?");
+        // createCookie("username", user , 30);
+    }
+}
 
-function createCookie(cname,cvalue,cdays) {
-	if (cdays) {
-		var date = new Date();
-		date.setTime(date.getTime()+(cdays*24*60*60*1000));
-		var expires = "; expires="+date.toGMTString();
-    }else{
+
+function createCookie(cname, cvalue, cdays) {
+    if (cdays) {
+        var date = new Date();
+        date.setTime(date.getTime() + (cdays * 24 * 60 * 60 * 1000));
+        var expires = "; expires=" + date.toGMTString();
+    } else {
         var expires = "";
-    } 
-    
-    document.cookie = cname+"="+cvalue+expires+"; path=/";
+    }
+    // var cScore = "; score=";
+    // var score = "100";
+
+    // var cookie =cname+"="+cvalue+expires+"; path=/";
+    // var cookie =cname+"="+cvalue+"; path=/"+expires;
+    // document.cookie="MyCookie=1; path=; expires="+exp.toGMTString();
+    // var cookie = cname + "=" + cvalue + expires + "; path=/";
+    // console.log(cookie);
+    // document.cookie = cname + "=" + cvalue + expires + "; path=/";
+    // console.log("cookie text: "+cname + "=" + cvalue + cScore + score + expires + "; path=/");
+    // document.cookie = cname + "=" + cvalue + cScore + score + expires + "; path=/";
+
+    // document.cookie = cname + "=" + cvalue + "; path=/" + expires;
+    document.cookie = cname + "=" + cvalue + expires+";";
+    console.log(document.cookie);
     readCookie(cname);
 }
 
 function readCookie(cname) {
-	var ReadcName = cname + "=";
-	var ca = document.cookie.split(';');
-	for(var i=0;i < ca.length;i++) {
-		var c = ca[i];
-		while (c.charAt(0)==' ') c = c.substring(1,c.length);
-		if (c.indexOf(ReadcName) == 0) return c.substring(ReadcName.length,c.length);
-	}
-	return null;
+    var ReadcName = cname + "=";
+    var cookieArr = document.cookie.split(';');
+    for (var i = 0; i < cookieArr.length; i++) {
+        var cookieSplit = cookieArr[i];
+        while (cookieSplit.charAt(0) == ' ') {
+            cookieSplit = cookieSplit.substring(1, cookieSplit.length);
+        }
+        if (cookieSplit.indexOf(ReadcName) == 0) {
+            console.log(cookieSplit);
+            return cookieSplit.substring(ReadcName.length, cookieSplit.length);
+        }
+    }
+    console.log("no cookie");
+    return "";
 }
 
 function eraseCookie(name) {
-	createCookie(name,"",-1);
+    createCookie(name, "", -1);
 }
 
 
 function continueCSS() {
-    
+
     // var x = document.getElementById("Input").children.answer;
     //  console.log("text field value: "+x.value);
     // console.log("text field id: "+x.id);
@@ -56,6 +95,7 @@ function continueCSS() {
     // var textEl = document.getElementById("answer");
     // textEl.id = "test";
     // console.log(textEl.id);
+    // createCookie()
 
     document.querySelector("link[href='css/title.css']").href = "css/tables.css";
     // document.getElementById("answer").value = "";
