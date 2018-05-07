@@ -45,7 +45,7 @@ function readCookie(cname) {
         while (c.charAt(0) == ' ') c = c.substring(1, c.length);
         if (c.indexOf(ReadcName) == 0) return c.substring(ReadcName.length, c.length);
     }
-    return null;
+    return 0;
     var cookieArr = document.cookie.split(';');
     for (var i = 0; i < cookieArr.length; i++) {
         var cookieSplit = cookieArr[i];
