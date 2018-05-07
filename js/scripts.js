@@ -110,7 +110,9 @@ function continueCSS() {
 function checkAnswer(element) {
 
     var answer = element.value;
-    if (answer == answers[subX][subY]) {
+    answer = answer.toLowerCase();
+    console.log(answer);
+    if (answers[subX][subY].toLowerCase().includes(answer)) {
         console.log("That was right");
         currentScore = currentScore + possPoints;
         console.log(currentScore);

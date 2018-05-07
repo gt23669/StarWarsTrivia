@@ -30,7 +30,7 @@ table{
 
 .prettyTable{
     margin: 7%;
-    margin-top: 15%;
+    /* margin-top: 15%; */
     padding: 20px;
     background-color: silver;
     opacity: .9;

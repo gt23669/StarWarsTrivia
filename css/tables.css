@@ -31,7 +31,7 @@ table{
 .points{
     color: skyblue;
     font-family: 'Exo 2', sans-serif;
-    font-size: 20px;
+    font-size: 35px;
 
 }
 
@@ -43,7 +43,7 @@ td{
     border: solid green 5px;
     color: skyblue;
     text-align: center;
-    padding: 5px;
+    padding: 15px;
     font-family: 'Exo 2', sans-serif;
 }
 
@@ -56,10 +56,10 @@ body{
 
 .prettyTable{
     margin: 7%;
-    margin-top: 15%;
+    /* margin-top: 15%; */
     padding: 20px;
     background-color: silver;
-    opacity: .75;
+    opacity: .9;
     border: solid grey 5px;
     border-radius: 50px;
     font-family: 'Exo 2', sans-serif;
