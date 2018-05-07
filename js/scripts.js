@@ -100,7 +100,7 @@ function continueCSS() {
     if (numInputs === 1) {
         document.querySelector("link[href='css/title.css']").href = "css/tables.css";
         document.getElementById("intro").innerHTML = "Choose a category and point value."
-        document.getElementById("Input") = 
+        document.getElementById("Input").elements.value = "Answer"
     } else if (numInputs > 1 && numInputs < 31) {
         document.querySelector("link[href='css/questions.css']").href = "css/tables.css";
         document.getElementById("intro").innerHTML = "Choose a category and point value."
