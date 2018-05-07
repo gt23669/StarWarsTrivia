@@ -117,6 +117,7 @@ function checkAnswer(element) {
         document.getElementById("Score").innerHTML = "Score: " + currentScore + " Highscore: " + highScore;
     } else {
         currentScore = currentScore - possPoints;
+        document.getElementById("Score").innerHTML = "Score: " + currentScore + " Highscore: " + highScore;
         console.log("Sorry that is wrong");
         //Sorry that was wrong. No points.
     }
