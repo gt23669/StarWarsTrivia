@@ -99,11 +99,11 @@ function continueCSS() {
 
     if (numInputs === 1) {
         document.querySelector("link[href='css/title.css']").href = "css/tables.css";
-        document.getElementById("intro").innerHTML = "Choose a category and point value."
-        document.getElementById("Input").elements.value = "Answer"
+        document.getElementById("intro").innerHTML = "Choose a category and point value.";
+        document.getElementById("Input").innerHTML = "answer";
     } else if (numInputs > 1 && numInputs < 31) {
         document.querySelector("link[href='css/questions.css']").href = "css/tables.css";
-        document.getElementById("intro").innerHTML = "Choose a category and point value."
+        document.getElementById("intro").innerHTML = "Choose a category and point value.";
 
     } else if (numInputs === 31) {
         GameOver();
@@ -112,17 +112,10 @@ function continueCSS() {
 }
 
 function GameOver() {
-    // var x = document.getElementById("Input").children.answer;
-    // console.log("text field value: "+x.value);
-    // console.log("text field id: "+x.id);
-    // x.id = "triviaAnswer";
-    // console.log(x.id);
-    // var textEl = document.getElementById("answer");
-    // textEl.id = "test";
-    // console.log(textEl.id);
-    // createCookie()
+  
 
     document.querySelector("link[href='css/tables.css']").href = "css/gameOver.css";
+    document.getElementById("intro").innerHTML = "High Score:" + document.cookie;
 
 }
 

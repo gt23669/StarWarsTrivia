@@ -11,39 +11,8 @@
 
 form{
     font-size: 30Px;
-    text-decoration-color: gold;
+    color: gold;
     text-align: center;
-}
-
-table{
-    border: solid 2px green;
-    margin-left: auto;
-    margin-right: auto;
-    
-}
-
-.tableCategory{
-    font-size: 45px;
-    color: green;
-}
-
-.points{
-    color: skyblue;
-    font-family: Georgia;
-    font-size: 20px;
-
-}
-
-a:hover{
-    color: purple;
-}
-
-td{
-    border: solid green 5px;
-    color: skyblue;
-    font-family: Georgia;
-    text-align: center;
-    padding: 5px;
 }
 
 body{
@@ -53,14 +22,25 @@ body{
     background-repeat: no-repeat;
 }
 
+table{
+    border: 0px;
+    font-size: 0px;
+}
+
 .prettyTable{
     margin: 7%;
     margin-top: 15%;
     padding: 20px;
     background-color: silver;
-    opacity: .75;
+    opacity: .9;
     border: solid grey 5px;
     border-radius: 50px;
+}
+td{
+    border: solid green 0px;
+    color: skyblue;
+    font-family: Georgia;
+    text-align: center;
 }
 
 .Score{
@@ -69,3 +49,10 @@ body{
     margin-left: 80%;
 
 }
+
+
+
+/* a:hover{
+    color: purple;
+} */
+
