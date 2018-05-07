@@ -1,10 +1,32 @@
 window.onload = function () {
     console.log("onload");
     createCookie("username", "Daniel", 30);
+    // createCookie("username", "Daniel", -1);
+    // createCookie("score",100,-1);
+    // readCookie("username");
+    // readCookie("score");
+    // console.log(document.cookie);
+    // eraseCookie("username");
+    // eraseCookie("score");
+    // eraseCookie("username=Daniel"); 
+    // eraseCookie("visits");
+    // createCookie("score", "100", 30);
     //add cookie function here to load in cookie info
-
+    // checkCookie();
+    // continueCSS();
 
 }
+function checkCookie() {
+    var username = readCookie("username");
+    // console.log("username: "+username);
+    if (username != "" ) {
+        alert("Welcome back " + username);
+    } else {
+        // var user = prompt("What is your name?");
+        // createCookie("username", user , 30);
+    }
+}
+
 
 function createCookie(cname, cvalue, cdays) {
     if (cdays) {
@@ -17,6 +39,21 @@ function createCookie(cname, cvalue, cdays) {
 
     document.cookie = cname + " = " + cvalue + expires + "; path=/";
 
+    // var cScore = "; score=";
+    // var score = "100";
+
+    // var cookie =cname+"="+cvalue+expires+"; path=/";
+    // var cookie =cname+"="+cvalue+"; path=/"+expires;
+    // document.cookie="MyCookie=1; path=; expires="+exp.toGMTString();
+    // var cookie = cname + "=" + cvalue + expires + "; path=/";
+    // console.log(cookie);
+    // document.cookie = cname + "=" + cvalue + expires + "; path=/";
+    // console.log("cookie text: "+cname + "=" + cvalue + cScore + score + expires + "; path=/");
+    // document.cookie = cname + "=" + cvalue + cScore + score + expires + "; path=/";
+
+    // document.cookie = cname + "=" + cvalue + "; path=/" + expires;
+    document.cookie = cname + "=" + cvalue + expires+";";
+    console.log(document.cookie);
     readCookie(cname);
 }
 
@@ -29,6 +66,19 @@ function readCookie(cname) {
         if (c.indexOf(ReadcName) == 0) return c.substring(ReadcName.length, c.length);
     }
     return null;
+    var cookieArr = document.cookie.split(';');
+    for (var i = 0; i < cookieArr.length; i++) {
+        var cookieSplit = cookieArr[i];
+        while (cookieSplit.charAt(0) == ' ') {
+            cookieSplit = cookieSplit.substring(1, cookieSplit.length);
+        }
+        if (cookieSplit.indexOf(ReadcName) == 0) {
+            console.log(cookieSplit);
+            return cookieSplit.substring(ReadcName.length, cookieSplit.length);
+        }
+    }
+    console.log("no cookie");
+    return "";
 }
 
 function eraseCookie(name) {
@@ -39,15 +89,22 @@ var numInputs = 0;
 
 function continueCSS() {
 
+    // var x = document.getElementById("Input").children.answer;
+    //  console.log("text field value: "+x.value);
+    // console.log("text field id: "+x.id);
+    // if(x.id == "answer"){
+    //     setCookie("username",x.value, 30);
+
     numInputs++;
 
     if (numInputs === 1) {
         document.querySelector("link[href='css/title.css']").href = "css/tables.css";
         document.getElementById("intro").innerHTML = "Choose a category and point value."
-        document.getElementById("Input").innerHTML = "Answer"
+        document.getElementById("Input") = 
     } else if (numInputs > 1 && numInputs < 31) {
         document.querySelector("link[href='css/questions.css']").href = "css/tables.css";
         document.getElementById("intro").innerHTML = "Choose a category and point value."
+
     } else if (numInputs === 31) {
         GameOver();
     }
@@ -55,6 +112,15 @@ function continueCSS() {
 }
 
 function GameOver() {
+    // var x = document.getElementById("Input").children.answer;
+    // console.log("text field value: "+x.value);
+    // console.log("text field id: "+x.id);
+    // x.id = "triviaAnswer";
+    // console.log(x.id);
+    // var textEl = document.getElementById("answer");
+    // textEl.id = "test";
+    // console.log(textEl.id);
+    // createCookie()
 
     document.querySelector("link[href='css/tables.css']").href = "css/gameOver.css";
 
