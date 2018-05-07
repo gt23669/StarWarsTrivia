@@ -7,6 +7,7 @@
     /* margin-top: 300px; */
     -webkit-text-stroke-color: dodgerblue;
     -webkit-text-stroke-width: 1px;
+    font-family: 'Exo 2', sans-serif;
 }
 
 form{
@@ -29,7 +30,7 @@ table{
 
 .points{
     color: skyblue;
-    font-family: Georgia;
+    font-family: 'Exo 2', sans-serif;
     font-size: 20px;
 
 }
@@ -41,9 +42,9 @@ a:hover{
 td{
     border: solid green 5px;
     color: skyblue;
-    font-family: Georgia;
     text-align: center;
     padding: 5px;
+    font-family: 'Exo 2', sans-serif;
 }
 
 body{
@@ -61,6 +62,7 @@ body{
     opacity: .75;
     border: solid grey 5px;
     border-radius: 50px;
+    font-family: 'Exo 2', sans-serif;
 }
 
 .Score{
